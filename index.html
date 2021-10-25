@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Components</title>
+</head>
+<body>
+  <sean-navbar>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+  </sean-navbar>
+  <sean-component message="This is a message">
+    <div>
+      <h1>Sean Component 1</h1>
+      <h2>Another</h2>
+    </div>
+  </sean-component>
+  <sean-component message="This is another message">
+    <h1>Sean Component 2</h1>
+  </sean-component>
+  <sean-hash-router></sean-hash-router>
+  <script type="module" src="WebComponentRender.js"></script>
+  <script type="module">
+    window.WebComponentRender({
+      url: '/',
+      tagPartial: 'sean-',
+      loader: '<div class="loader">Loading...</div>',
+      loaderClass: 'loader'
+    });
+  </script>
+</body>
+</html>
