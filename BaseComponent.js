@@ -21,7 +21,10 @@ window.BaseComponent = class BaseComponent extends HTMLElement {
     }
 
     if(window.BaseComponent.loaderClass) {
-      this.querySelector(`.${window.BaseComponent.loaderClass}`).remove();
+      const loader = this.querySelector(`.${window.BaseComponent.loaderClass}`);
+      if(loader) {
+        loader.remove();
+      }
     }
 
     this.afterMount();

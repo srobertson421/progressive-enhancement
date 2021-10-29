@@ -12,9 +12,9 @@ window.WebComponentRender = async function({ url, tagPartial, loader, loaderClas
     const nodeName = node.nodeName.toLowerCase();
 
     if(typeof loader === 'string') {
-      node.insertAdjacentHTML('beforeend', loader);
+      node.insertAdjacentHTML('afterbegin', loader);
     } else {
-      node.appendChild(loader);
+      node.prepend(loader);
     }
 
     if(window.BaseComponent) {

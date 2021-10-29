@@ -5,24 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auto Components</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <sean-navbar>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-  </sean-navbar>
-  <sean-clicker></sean-clicker>
-  <sean-clicker></sean-clicker>
-  <sean-component message="This is a message">
-    <div>
-      <h1>Sean Component 1</h1>
-      <h2>Another</h2>
-    </div>
-  </sean-component>
-  <sean-component message="This is another message">
-    <h1>Sean Component 2</h1>
-  </sean-component>
-  <sean-hash-router></sean-hash-router>
+  <sean-hash-navbar>
+    <a href="#/">Home</a>
+    <a href="#/about">About</a>
+  </sean-hash-navbar>
+  <h1>Sean's Component Page</h1>
+  <sean-hash-router>
+    <sean-page path="/">
+      <h1>Home Page</h1>
+      <sean-clicker>
+        <div class="click-count">Count: 0</div>
+        <button class="inc">Inc</button>
+        <button class="dec">Dec</button>
+      </sean-clicker>
+    </sean-page>
+    <sean-page path="/about">
+      <h1>About Page</h1>
+    </sean-page>
+  </sean-hash-router>
   <script type="module" src="BaseComponent.js"></script>
   <script type="module" src="WebComponentRender.js"></script>
   <script type="module">

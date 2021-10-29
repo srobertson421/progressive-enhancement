@@ -4,7 +4,7 @@ class SeanClicker extends window.BaseComponent {
   }
 
   afterMount() {
-    this.countEl = this.querySelector('.click-count');
+    this.countEls = this.querySelectorAll('.click-count');
 
     this.addEventListener('click', e => {
       e.preventDefault();
@@ -14,16 +14,10 @@ class SeanClicker extends window.BaseComponent {
         this.count--;
       }
 
-      this.countEl.innerText = `Count: ${this.count}`;
+      this.countEls.forEach(node => {
+        node.innerText = `Count: ${this.count}`;
+      });
     });
-  }
-
-  template() {
-    return `
-      <div class="click-count">Count: ${this.count}</div>
-      <button class="inc">Inc</button>
-      <button class="dec">Dec</button>
-    `;
   }
 }
 
